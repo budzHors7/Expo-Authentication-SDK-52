@@ -7,7 +7,8 @@ export default function TabOneScreen() {
 
       <View className="h-[1] w-full bg-gray-300 dark:bg-gray-700" />
 
-      <View className="gap-y-10 justify-center items-center"><Text className="text-lg text-center text-gray-600 dark:text-gray-400">
+      <View className="gap-y-10 justify-center items-center">
+        <Text className="text-lg text-center text-gray-600 dark:text-gray-400">
           This is an <Text className="font-extrabold text-[#2e78b7]">Expo </Text> 
           Template using <Text className="font-semibold text-[#2e78b7]">Context Provider </Text> 
           with <Text className="font-semibold text-[#2e78b7]">expo-secure-store</Text> to persist user session on the device.

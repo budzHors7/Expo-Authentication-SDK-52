@@ -1,22 +1,20 @@
-import { createContext, useContext, useEffect } from 'react';
+import { createContext, PropsWithChildren, useContext, useEffect } from 'react';
 import { useStorageState } from './useStorageState';
 import { useRouter, useSegments } from 'expo-router';
 
-const AuthContext = createContext<{
+type AuthType = {
   signIn: () => void;
   signOut: () => void;
   session?: string | null;
   isLoading: boolean;
-}>({
-  signIn: () => null,
-  signOut: () => null,
-  session: null,
-  isLoading: false,
-});
+}
+
+const AuthContext = createContext<AuthType>({signIn: () => null, signOut: () => null, session: null, isLoading: false})
 
 // This hook can be used to access the user info.
 export function useSession() {
-  const value = useContext(AuthContext);
+  const value = useContext(AuthContext)
+
   if (process.env.NODE_ENV !== 'production') {
     if (!value) {
       throw new Error('useSession must be wrapped in a <SessionProvider />');
@@ -45,7 +43,7 @@ function useProtectedRoute(session: string | null) {
   }, [session, segments])
 }
 
-export function SessionProvider(props: React.PropsWithChildren) {
+export function SessionProvider({ children }: PropsWithChildren) {
   const [[isLoading, session], setSession] = useStorageState('session');
 
   useProtectedRoute(session)
@@ -63,7 +61,7 @@ export function SessionProvider(props: React.PropsWithChildren) {
         session,
         isLoading,
       }}>
-      {props.children}
+      {children}
     </AuthContext.Provider>
   );
 }

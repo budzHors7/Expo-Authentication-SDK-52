@@ -1,8 +1,8 @@
 # Expo Authentication Template SDK 52
 
-**Expo** Basic Authenticaton using **Context Provider** & `expo-secure-store` to persist user on the device.
+**Expo** Basic Authentication Template using **Context Provider** & `expo-secure-store` to persist user on the device.
 
-> **Note:** This app is using the **Expo SDK 52**
+> **Note:** This app is using the **Expo SDK 52**, **React Native 0.76** with the **New Architecture**
 
 ![app](/assets/images/App%20Showcase.png)
 

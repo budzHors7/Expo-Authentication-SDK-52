@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Expo Authentication SDK 51",
+    "name": "Expo Authentication SDK 52",
     "slug": "ExpoAuthSDK52",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -8,17 +8,12 @@
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "cover",
-      "backgroundColor": "#ffffff"
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.example.ExpoAuthSDK51",
+      "bundleIdentifier": "com.example.ExpoAuthSDK52",
       "privacyManifests": {
         "NSPrivacyAccessedAPITypes": [
           {
@@ -35,7 +30,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.example.ExpoAuthSDK51"
+      "package": "com.example.ExpoAuthSDK52"
     },
     "plugins": [
       [
@@ -45,7 +40,16 @@
         }
       ],
       [
-        "expo-splash-screen"
+        "expo-splash-screen", {
+          "backgroundColor": "#ffffff",
+          "image": "./assets/splash-icon.png",
+          "dark": {
+            "image": "./assets/splash-icon.png",
+            "backgroundColor": "#000000"
+          },
+          "imageWidth": 200,
+          "resizeMode": "cover"
+        }
       ],
       [
         "expo-font",

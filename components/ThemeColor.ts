@@ -1,5 +1,5 @@
 import { Platform } from "react-native"
-import type { Theme } from "@react-navigation/native"
+import { Theme } from "@react-navigation/native"
 
 const White = '#fff'
 const secondaryLight = '#e5e7eb'
@@ -12,11 +12,11 @@ const fonts = Platform.select({
   ios: {
     regular: {
       fontFamily: "System",
-      fontWeight: "400",
+      fontWeight: '400',
     },
     medium: {
       fontFamily: "System",
-      fontWeight: "500",
+      fontWeight: '500',
     },
     bold: {
       fontFamily: "System",
@@ -24,28 +24,28 @@ const fonts = Platform.select({
     },
     heavy: {
       fontFamily: "System",
-      fontWeight: '700',
+      fontWeight: '900',
     },
   },
   default: {
     regular: {
       fontFamily: "sans-serif",
-      fontWeight: "normal",
+      fontWeight: '400',
     },
     medium: {
       fontFamily: "sans-serif-medium",
-      fontWeight: "normal",
+      fontWeight: '500',
     },
     bold: {
       fontFamily: "sans-serif",
-      fontWeight: "600",
+      fontWeight: '600',
     },
     heavy: {
       fontFamily: "sans-serif",
-      fontWeight: "700",
+      fontWeight: '900',
     },
-  },
-})
+  }
+} as const satisfies Record<string, Theme['fonts']>);
 
 const MyLightTheme: Theme = {
   dark: false,
@@ -60,7 +60,7 @@ const MyLightTheme: Theme = {
   fonts
 }
 
-const MyDarkTheme = {
+const MyDarkTheme: Theme = {
   dark: true,
   colors: {
     primary: Primary,
